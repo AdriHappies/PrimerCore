@@ -37,5 +37,24 @@ namespace PrimerCore.Controllers
             //enviamos el modelo a la vista
             return View(listapersonas);
         }
+
+        public IActionResult InformacionGetViewController(String nombre, int edad)
+        {
+            ViewBag.Nombre = nombre;
+            ViewBag.Edad = edad;
+            return View();
+        }
+        [HttpGet]
+        public IActionResult InformacionPostViewController()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult InformacionPostViewController(Persona persona)
+        {
+            
+            return View(persona);
+        }
     }
 }

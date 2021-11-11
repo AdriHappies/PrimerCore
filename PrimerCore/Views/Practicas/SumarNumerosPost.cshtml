@@ -1,0 +1,24 @@
+﻿
+<h1>Sumar numeros POST</h1>
+<a asp-controller="Practicas"
+   asp-action="Menu">
+    Volver menu
+</a>
+<hr />
+
+<form method="post">
+    <label>Numero 1: </label>
+    <input type="number" name="num1"
+           class="form-control" /><br />
+    <label>Numero2: </label>
+    <input type="number" name="num2"
+           class="form-control" /><br />
+    <button class="btn btn-info">
+        Enviar datos
+    </button>
+</form>
+<hr />
+
+<h2 style="color:darkviolet">
+    @ViewBag.Num1 + @ViewBag.Num2 = @ViewBag.Suma
+</h2>

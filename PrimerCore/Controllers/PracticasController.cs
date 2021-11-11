@@ -9,6 +9,7 @@ namespace PrimerCore.Controllers
 {
     public class PracticasController : Controller
     {
+        //esto es un get
         public IActionResult Menu()
         {
             return View();
@@ -28,6 +29,26 @@ namespace PrimerCore.Controllers
             comic2.Imagen = "https://www.normaeditorial.com/upload/media/albumes/0001/07/thumb_6662_albumes_big.jpeg";
             listacomics.Add(comic2);
             return View(listacomics);
+        }
+
+        public IActionResult SumarNumerosGet()
+        {
+            ViewBag.Num1 = 2;
+            ViewBag.Num2 = 7;
+            ViewBag.Suma = ViewBag.Num1 + ViewBag.Num2;
+            return View();
+        }
+        public IActionResult SumarNumerosPost()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SumarNumerosPost(int num1, int num2)
+        {
+            ViewBag.Num1 = num1;
+            ViewBag.Num2 = num2;
+            ViewBag.Suma = num1 + num2;
+            return View();
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿@model Persona
+<h1>Post View Controller</h1>
+
+<a asp-controller="Informacion"
+   asp-action="Index">
+    Volver menu
+</a>
+<hr />
+
+<form method="post">
+    <label>Nombre: </label>
+    <input type="text" name="nombre"
+           class="form-control" /><br />
+    <label>Edad: </label>
+    <input type="number" name="edad"
+           class="form-control" /><br />
+    <label>Email: </label>
+    <input type="email" name="email"
+           class="form-control" /><br />
+    <button class="btn btn-info">
+        Enviar datos
+    </button>
+</form>
+<hr />
+@if (Model != null)
+{
+    <h3 style="color:darkviolet">
+        @Model.Nombre @Model.Edad @Model.Email
+    </h3>
+}
