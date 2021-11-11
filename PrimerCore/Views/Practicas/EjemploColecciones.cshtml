@@ -1,0 +1,19 @@
+﻿@model List<Comic>
+
+<h1>Colección de comics</h1>
+<a asp-controller="Practicas"
+   asp-action="Menu">
+    Volver al menu
+</a>
+<hr/>
+
+<table class="table table-dark">
+    @foreach (Comic c in Model)
+    {
+        <tr>
+            <td>@c.Nombre</td>
+            <td>@c.Descripcion</td>
+            <td><img src=@c.Imagen width="100" height="100"></td>
+        </tr>
+    }
+</table>
