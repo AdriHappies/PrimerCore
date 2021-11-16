@@ -1,0 +1,34 @@
+﻿@model List<FilaTabla>
+<h1>Tabla de Multiplicar</h1>
+<a asp-controller="Practicas"
+   asp-action="Menu">
+    Volver menu
+</a>
+<hr />
+
+<form method="post">
+    <label>Introduzca un número: </label>
+    <input type="number" name="num"
+           class="form-control" /><br />
+    <button class="btn btn-info">
+        Tabla de multiplicar
+    </button>
+</form>
+<hr />
+
+@if (ViewBag.Num != null)
+{
+    <table class="table table-dark">
+        <tr>
+            <td ><b>Multiplicación</b></td>
+            <td><b>Resultado</b></td>
+        </tr>
+        @foreach(FilaTabla fila in Model)
+        {
+            <tr>
+                <td>@fila.Columna1</td>           
+                <td>@fila.Columna2</td>
+            </tr>
+        }
+    </table>
+}

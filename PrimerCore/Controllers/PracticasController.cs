@@ -50,5 +50,24 @@ namespace PrimerCore.Controllers
             ViewBag.Suma = num1 + num2;
             return View();
         }
+
+        public IActionResult TablaMultiplicar()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult TablaMultiplicar(int num)
+        {
+            List<FilaTabla> listafilas = new List<FilaTabla>();
+            for (int i = 1;i <= 10; i++)
+            {
+                FilaTabla fila = new FilaTabla();
+                fila.Columna1 = num + " * " + i;
+                fila.Columna2 = num * i;
+                listafilas.Add(fila);
+            }
+
+            return View(listafilas);
+        }
     }
 }
