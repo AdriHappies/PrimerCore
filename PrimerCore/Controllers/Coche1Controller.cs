@@ -11,14 +11,14 @@ namespace PrimerCore.Controllers
     {
         private Coche car;
 
-        public Coche1Controller()
+        public Coche1Controller(Coche car)
         {
-            this.car = new Coche();
-            this.car.Marca = "VolksWagen";
-            this.car.Modelo = "Escarabajo";
-            this.car.Imagen = "VWEscarabajo.jpg";
-            this.car.Velocidad = 0;
-            this.car.VelocidadMaxima = 150;
+            this.car = car;
+        //    this.car.Marca = "VolksWagen";
+        //    this.car.Modelo = "Escarabajo";
+        //    this.car.Imagen = "VWEscarabajo.jpg";
+        //    this.car.Velocidad = 0;
+        //    this.car.VelocidadMaxima = 150;
         }
         public IActionResult Index()
         {

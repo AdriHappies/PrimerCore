@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PrimerCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace PrimerCore
 {
     public class Startup
     {
+
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +26,20 @@ namespace PrimerCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Coche beetle = new Coche();
+            beetle.Marca = "VolksWagen";
+            beetle.Modelo = "Escarabajo";
+            beetle.Imagen = "VWEscarabajo.jpg";
+            beetle.Velocidad = 0;
+            beetle.VelocidadMaxima = 150;
+            Coche porsche = new Coche();
+            porsche.Marca = "Porsche";
+            porsche.Modelo = "911 de 1973";
+            porsche.Imagen = "911-1973.jpg";
+            porsche.Velocidad = 0;
+            porsche.VelocidadMaxima = 240;
+            //inyectamos el coche como treansient
+            services.AddTransient<Coche>(car => porsche);
             services.AddControllersWithViews();
         }
 
